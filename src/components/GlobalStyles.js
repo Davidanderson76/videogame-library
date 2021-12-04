@@ -19,14 +19,20 @@ const GlobalStyles = createGlobalStyle`
         }
     }
     body{
+        margin: auto;
         font-family: 'Montserrat', sans-serif;
         width: 100%;
+        max-width: 1600px;
     }
     h2{
         font-size: 3rem;
         font-family: 'Abril FatFace', cursive;
         font-weight: lighter;
         color: #333;
+        @media(max-width: 670px){
+            padding: 1rem;
+            font-size: 2rem;
+        }
     }
     h3{
         font-size: 1.3rem;

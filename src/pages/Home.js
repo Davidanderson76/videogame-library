@@ -8,6 +8,7 @@ import GameDetail from "../components/GameDetail";
 import styled from "styled-components";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { fadeIn } from "../animations";
 
 require("dotenv").config();
 
@@ -28,7 +29,7 @@ const Home = () => {
   );
 
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && GameDetail.name && <GameDetail pathId={pathId} />}
@@ -95,9 +96,17 @@ const Home = () => {
 };
 
 const GameList = styled(motion.div)`
-  padding: 0rem 5rem;
+  padding: 0 5rem;
   h2 {
-    padding: 5rem 0rem;
+    padding: 5rem 0;
+  }
+  @media (max-width: 470px) {
+    padding: 0;
+    h2 {
+      padding: 1.5rem;
+      justify-content: center;
+      text-align: center;
+    }
   }
 `;
 const Games = styled(motion.div)`
