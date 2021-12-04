@@ -53,3 +53,7 @@ export const gameDetailsURL = (game_id) =>
 //GAME SCREENSHOTS
 export const gameScreenshotURL = (game_id) =>
   `${base_url}games/${game_id}/screenshots?key=${apiKey}`;
+
+//SEARCHED GAME
+export const searchGameURL = (game_name) =>
+  `${base_url}games?key=${apiKey}&search=${game_name}`;
